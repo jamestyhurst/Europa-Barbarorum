@@ -1,4 +1,5 @@
 from Provinces import *
+from Season import *
 
 class Faction:
 
@@ -62,6 +63,37 @@ class Faction:
         if province in self.provinces:
             province['income'] = province['income'] * self.improvement_amount
 
+    def grow_province(self, province):
+        if province in self.provinces:
+            province['population'] = province['population'] * self.growth_amount
+
+    def manage_province(self, province):
+        global turn
+        global season
+        action_loop = True
+        while action_loop == True:
+            print("Select a Province-Option")
+            print("[1] Improve Income")
+            print("[2] Grow Population")
+            print("[3] Return to Turn Menu")
+            province_choice = input()
+            if province_choice == '1':
+                self.improve_province(province)
+                action_loop = False
+                turn = turn + 1
+                season.change_season()
+                # test_object.earn_province_income(test_object.provinces)
+            elif province_choice == '2':
+                self.grow_province(province)
+                action_loop = False
+                turn = turn + 1
+                season.change_season()
+                # test_object.earn_province_income(test_object.provinces)
+            elif province_choice == '3':
+                action_loop = False
+
+            else:
+                print("Please Try Again")
 
     def add_army(self, army):
         if army not in self.armies:
@@ -76,6 +108,8 @@ class Faction:
         for army in self.armies:
             print(f"Armies of {self.name}, total of {self.armies}")
             print(f'--> Army #{army.number}, {army.size} men' )
+
+
 
     #Below is legacy code from previous versions or which is not conveinent to have active in the current version
 
