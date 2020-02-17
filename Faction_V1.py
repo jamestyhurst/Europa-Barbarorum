@@ -67,9 +67,9 @@ class Faction:
         if province in self.provinces:
             province['population'] = province['population'] * self.growth_amount
 
-    def manage_province(self, province):
-        
-        global season
+    def manage_province(self, province, turn, season):
+        #global turn
+        #global season
         action_loop = True
         while action_loop == True:
             print("Select a Province-Option")
@@ -82,7 +82,7 @@ class Faction:
                     self.treasury -= 50
                     self.improve_province(province)
                     action_loop = False
-                    global turn
+                    #global turn
                     turn = turn + 1
                     season.change_season()
                     # test_object.earn_province_income(test_object.provinces)

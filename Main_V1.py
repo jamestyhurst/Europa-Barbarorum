@@ -43,6 +43,7 @@ while game_running:
         print("[1] Print Faction Information")
         print("[2] Print Province Information")
         print("[3] Upgrade Province")
+        print("[4] End/Pass Turn")
         turn_choice = input()
         if turn_choice == '1':
             print(faction1.treasury, faction1.population, faction1.size)
@@ -50,7 +51,11 @@ while game_running:
             print(faction1.provinces)
         elif turn_choice == '3':
             turn += 1
-            faction1.manage_province(province1)
+            faction1.manage_province(province1, turn, season)
+            season.change_season()
+            faction1.earn_province_income(faction1.provinces)
+        elif turn_choice == '4':
+            turn += 1
             season.change_season()
             faction1.earn_province_income(faction1.provinces)
         else:
