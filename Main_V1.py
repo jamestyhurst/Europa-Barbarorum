@@ -19,6 +19,8 @@ faction1.population = faction1.faction_sum()
 print(faction1.population)
 print(f"The owner of {province2['name']} is {province2['owner']}")
 
+#faction1.print_provinces()
+
 Player = Faction
 
 #Beginning of Game Loop Code

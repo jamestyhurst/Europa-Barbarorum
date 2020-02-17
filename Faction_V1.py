@@ -47,7 +47,7 @@ class Faction:
     # def print_provinces(self):
     #     for province in self.provinces:
     #         print(f"Provinces of {self.name}, total of {self.size}")
-    #         print(f'--> {{province['name']}}, {province['population'} people' )
+    #         print(f'--> {province['name']}, {province['population']} people' )
 
     def faction_sum(self):
         for province in self.provinces:
