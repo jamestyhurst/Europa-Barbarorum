@@ -44,10 +44,10 @@ class Faction:
             self.provinces.remove(province)
             self.size = self.size - 1
 
-    # def print_provinces(self):
-    #     for province in self.provinces:
-    #         print(f"Provinces of {self.name}, total of {self.size}")
-    #         print(f'--> {province['name']}, {province['population']} people' )
+    def print_provinces(self):
+        for province in self.provinces:
+            print(f"Provinces of {self.name}, total of {self.size}")
+            print(f"--> {province['name']}, {province['population']} people" )
 
     def faction_sum(self):
         for province in self.provinces:
@@ -68,7 +68,7 @@ class Faction:
             province['population'] = province['population'] * self.growth_amount
 
     def manage_province(self, province):
-        global turn
+        
         global season
         action_loop = True
         while action_loop == True:
@@ -82,6 +82,7 @@ class Faction:
                     self.treasury -= 50
                     self.improve_province(province)
                     action_loop = False
+                    global turn
                     turn = turn + 1
                     season.change_season()
                     # test_object.earn_province_income(test_object.provinces)
@@ -91,6 +92,7 @@ class Faction:
                 if self.treasury >= 50:
                     self.grow_province(province)
                     action_loop = False
+                    
                     turn = turn + 1
                     season.change_season()
                     # test_object.earn_province_income(test_object.provinces)
