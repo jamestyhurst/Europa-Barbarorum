@@ -1,4 +1,3 @@
-# Test auth
 from Provinces import *
 from Season import *
 
