@@ -10,16 +10,10 @@ faction1 = Faction('Gaul', 0, 0, 0, 50, None, None)
 
 faction1.add_province(province1)
 faction1.population = faction1.faction_sum()
-# print(faction1.population)
-# print(f"The owner of {province1['name']} is {province1['owner']}")
+
 
 faction1.add_province(province2)
-#province2.change_owner(None, faction1)
 faction1.population = faction1.faction_sum()
-# print(faction1.population)
-# print(f"The owner of {province2['name']} is {province2['owner']}")
-
-#faction1.print_provinces()
 
 Player = Faction
 
@@ -63,7 +57,7 @@ while game_running:
         if turn_choice == '1':
             print(faction1.treasury, faction1.population, faction1.size)
         elif turn_choice == '2':
-            print(faction1.provinces)
+            faction1.print_provinces()
         elif turn_choice == '3':
             turn += 1
             faction1.manage_province(province1, turn, season)
