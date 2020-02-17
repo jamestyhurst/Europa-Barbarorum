@@ -1,0 +1,6 @@
+
+def update_populatio()
+    faction_population = 0
+    for province in self.provinces:
+        faction_population += province['population']
+    self.population = faction_population

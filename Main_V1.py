@@ -46,23 +46,24 @@ while game_running:
 
 
         print(f"{season.name}, turn {turn}" )
-        print(f"{faction1.treasury} denarii, {faction1.population} population")
+        print(f"You have {faction1.treasury} denarii and {faction1.population} population")
         print("Make Your Turn Decision")
         print("[1] Print Faction Information")
         print("[2] Print Province Information")
         print("[3] Upgrade Province")
-        print("[4] End/Pass Turn")
+        print("[4] End Turn")
         print("[5] End Session")
         turn_choice = input()
         if turn_choice == '1':
-            print(faction1.treasury, faction1.population, faction1.size)
+            print(f" You have {faction1.treasury} gold, {faction1.population} population, and {faction1.size} provinces")
+            print(f" Your income is {faction1.income} gold per turn")
         elif turn_choice == '2':
             faction1.print_provinces()
         elif turn_choice == '3':
-            turn += 1
+            #turn += 1
             faction1.manage_province(turn, season)
-            season.change_season()
-            faction1.earn_province_income(faction1.provinces)
+            #season.change_season()
+            #faction1.earn_province_income(faction1.provinces)
         elif turn_choice == '4':
             turn += 1
             season.change_season()

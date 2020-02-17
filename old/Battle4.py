@@ -105,22 +105,22 @@ while game_running:
     if faction_choice == '1':
         Player = faction1
         print(f"You are {Player.name}")
-        print(f"Provinces: {Player.provinces}, Population: {Player.population}, Income: {Player.income}, "
+        print(f"Provinces: {Player.size}, Population: {Player.population}, Income: {Player.income}, "
               f"Treasury: {Player.treasury}, Manpower: {Player.manpower}")
     elif faction_choice == '2':
         Player = faction2
         print(f"You are {Player.name}")
-        print(f"Provinces: {Player.provinces}, Population: {Player.population}, Income: {Player.income}, "
+        print(f"Provinces: {Player.size}, Population: {Player.population}, Income: {Player.income}, "
               f"Treasury: {Player.treasury}, Manpower: {Player.manpower}")
     elif faction_choice == '3':
         Player = faction3
         print(f"You are {Player.name}")
-        print(f"Provinces: {Player.provinces}, Population: {Player.population}, Income: {Player.income}, "
+        print(f"Provinces: {Player.size}, Population: {Player.population}, Income: {Player.income}, "
               f"Treasury: {Player.treasury}, Manpower: {Player.manpower}")
     elif faction_choice == '4':
         Player = faction4
         print(f"You are {Player.name}")
-        print(f"Provinces: {Player.provinces}, Population: {Player.population}, Income: {Player.income}, "
+        print(f"Provinces: {Player.size} , Population: {Player.population}, Income: {Player.income}, "
               f"Treasury: {Player.treasury}, Manpower: {Player.manpower}")
     else:
         print("Error, please try again")
