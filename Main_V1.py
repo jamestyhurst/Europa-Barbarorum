@@ -49,7 +49,7 @@ while game_running:
             print(faction1.provinces)
         elif turn_choice == '3':
             turn += 1
-            faction1.improve_province(province1)
+            faction1.manage_province
             season.change_season()
             faction1.earn_province_income(faction1.provinces)
         else:

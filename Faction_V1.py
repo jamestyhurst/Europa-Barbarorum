@@ -73,22 +73,29 @@ class Faction:
         action_loop = True
         while action_loop == True:
             print("Select a Province-Option")
-            print("[1] Improve Income")
-            print("[2] Grow Population")
+            print("[1] Improve Income (50 Gold)")
+            print("[2] Grow Population (50 Gold)")
             print("[3] Return to Turn Menu")
             province_choice = input()
             if province_choice == '1':
-                self.improve_province(province)
-                action_loop = False
-                turn = turn + 1
-                season.change_season()
-                # test_object.earn_province_income(test_object.provinces)
+                if self.treasury >= 50:
+                    self.treasury -= 50
+                    self.improve_province(province)
+                    action_loop = False
+                    turn = turn + 1
+                    season.change_season()
+                    # test_object.earn_province_income(test_object.provinces)
+                else: 
+                    print("Not enough funds")
             elif province_choice == '2':
-                self.grow_province(province)
-                action_loop = False
-                turn = turn + 1
-                season.change_season()
-                # test_object.earn_province_income(test_object.provinces)
+                if self.treasury >= 50:
+                    self.grow_province(province)
+                    action_loop = False
+                    turn = turn + 1
+                    season.change_season()
+                    # test_object.earn_province_income(test_object.provinces)
+                else: 
+                    print("Not enough funds")
             elif province_choice == '3':
                 action_loop = False
 
