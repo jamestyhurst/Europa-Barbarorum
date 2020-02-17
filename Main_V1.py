@@ -1,6 +1,6 @@
 #File Objects
 
-from Faction_V1 import *
+from Faction_V2 import *
 from Season import *
 from Provinces import *
 
@@ -60,7 +60,7 @@ while game_running:
             faction1.print_provinces()
         elif turn_choice == '3':
             turn += 1
-            faction1.manage_province(province1, turn, season)
+            faction1.manage_province(turn, season)
             season.change_season()
             faction1.earn_province_income(faction1.provinces)
         elif turn_choice == '4':
