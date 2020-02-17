@@ -3,7 +3,7 @@ province2 = {'name': 'Bibracte', 'population': 1000, 'income': 10, 'owner': None
 province3 = {'name': 'Rome', 'population': 1000, 'income': 10, 'owner': None}
 province4 = {'name': 'Capua', 'population': 1000, 'income': 10, 'owner': None}
 
-
+provinceArray = {province1, province2, province3, province4}
 
 
 

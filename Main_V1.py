@@ -53,6 +53,7 @@ while game_running:
         print("[3] Upgrade Province")
         print("[4] End/Pass Turn")
         print("[5] End Session")
+        print("[6] Choose Province")
         turn_choice = input()
         if turn_choice == '1':
             print(faction1.treasury, faction1.population, faction1.size)
@@ -70,5 +71,10 @@ while game_running:
         elif turn_choice == '5':
             print("Exiting Session")
             session_running = False
+        elif turn_choice == '6':
+            for province in provinceArray:
+                print(province['name'])
+                provinceNumber = input()
+                faction1.add_province(provinceNumber)
         else:
-            print("Sorry, please try again")
+            ("Sorry, please try again")

@@ -33,11 +33,10 @@ class Faction:
         if Faction not in self.faction_list:
             self.faction_list.append(Faction)
 
-    def add_province(self, province):
-        if province not in self.provinces:
-            self.provinces.append(province)
-            self.size = self.size + 1
-            province['owner'] = self.name
+    def add_province(self, provinceNumber):
+        self.provinces.append(provinceArray[provinceNumber])
+        self.size = self.size + 1
+        province['owner'] = self.name
 
     def remove_province(self, province):
         if province in self.provinces:
