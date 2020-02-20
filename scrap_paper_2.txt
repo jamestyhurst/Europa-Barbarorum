@@ -1,0 +1,25 @@
+scrap_paper_2
+
+
+option_number = 0
+option_array = []
+
+## Option Generating Code ##
+
+for province in ProvinceArray:
+    if province in self.provinces:
+        option_number += 1
+        print(f"{option_number} {province['name']}")
+        option_array.append(province)
+print("(or press x to exit this menu)")
+
+## Selection Code ##
+while selection_loop == True:
+    selection = input()
+
+    if selection in index.option_array:
+        option_array[selection] = selected_province
+        print(f"You have selected {selected_province['name']})
+    else:
+        print("Please try again")
+
