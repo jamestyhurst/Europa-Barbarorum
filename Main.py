@@ -2,7 +2,7 @@
 
 #File Imports
 
-from Faction_Test import *
+from Faction import *
 from Season import *
 from Provinces import *
 
