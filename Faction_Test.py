@@ -2,6 +2,7 @@
 
 from Provinces import *
 from Season import *
+#from Main_V2 import *
 
 class Faction:
 
@@ -35,7 +36,35 @@ class Faction:
         if Faction not in self.faction_list:
             self.faction_list.append(Faction)
 
+    #Defining Faction Selection Function
     
+    # def Choose_Faction():
+    #     print("Choose your faction")
+    #     faction_number = 0
+    #     global Faction
+    #     global faction_list
+    #     for faction in faction_array:
+    #         faction_number += 1
+    #         print(f"[{faction_number}] {faction.name}")
+    #     print(f"[x] Exit the faction selection menu")
+    #     faction_choice = input()
+    #     if faction_choice <= 'faction_number':
+    #         selected_faction = faction_array[faction_number - 1]
+    #         session_running = True
+    #         Player = selected_faction
+    #         print(f"You are {Player.name}")
+    #         print(f"Provinces: {Player.size}, Population: {Player.population}, Income: {Player.income}, "
+    #                 f"Treasury: {Player.treasury}, Manpower: {Player.manpower}")
+    #     elif faction_choice == 'x':
+    #         print("Exiting this menu")
+    #         campaign_loop = False
+    #         session_running = False
+    #     else:
+    #         print("Error, please try again")
+    #         session_running = False
+    #     pass
+
+
     def update_population(self):
         faction_population = 0
         for province in self.provinces:
@@ -68,7 +97,7 @@ class Faction:
                 if province['owner'] is None:
                     option_number += 1
                     option_array.append(province)
-                    print(f"[{option_number}] {province['name']} , owner: {province['owner']},"
+                    print(f"[{option_number}] {province['name']} , "
                             f"income: {province['income']}, population: {province['population']}")
                 
                    
@@ -151,10 +180,11 @@ class Faction:
             action_loop == True
             option_number = 0
             option_array = []
+            print("Provinces owned by the Player:")
             for province in ProvinceArray:
                 if province in self.provinces:
                     option_number += 1
-                    print(f"[{option_number}] {province['name']} (owned by Player)")
+                    print(f"[{option_number}] {province['name']}")
                     option_array.append(province)
             print("Choose a province (or press x to return to previous menu)")
             province_selection = input()
@@ -216,7 +246,12 @@ class Faction:
             print(f"Armies of {self.name}, total of {self.armies}")
             print(f'--> Army #{army.number}, {army.size} men' )
 
-
+# faction1 = Faction('Gaul', 0, 0, 0, 50, None, None)
+# faction2 = Faction('Rome', 0, 0, 0, 50, None, None)
+# faction3 = Faction('Greece', 0, 0, 0, 50, None, None)
+# faction4 = Faction('Germania', 0, 0, 0, 50, None, None)
+# faction_array = [faction1, faction2, faction3, faction4]
+# Player = Faction
 
     #Below is legacy code from previous versions or which is not conveinent to have active in the current version
 

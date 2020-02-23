@@ -6,6 +6,7 @@ from Faction_Test import *
 from Season import *
 from Provinces import *
 
+
 #Pre-Game Loop Initialization Code
 #Initializing Boolean and Counter Values
 
@@ -23,6 +24,7 @@ while game_running:
     faction2 = Faction('Rome', 0, 0, 0, 50, None, None)
     faction3 = Faction('Greece', 0, 0, 0, 50, None, None)
     faction4 = Faction('Germania', 0, 0, 0, 50, None, None)
+    faction_array = [faction1, faction2, faction3, faction4]
     Player = Faction
 
     #Setting baseline season value
@@ -42,42 +44,27 @@ while game_running:
         print("Closing Program")
         session_running = False
         game_running = False
+        campaign_loop = False
     else:
         print("Please try again")
 
     #Campaign Selection Menu 
     while campaign_loop == True:
+        
         print("Choose your faction")
-        print(f"[1] {faction1.name}")
-        print(f"[2] {faction2.name}")
-        print(f"[3] {faction3.name}")
-        print(f"[4] {faction4.name}")
+        faction_number = 0 
+        for faction in faction_array:
+            faction_number += 1
+            print(f"[{faction_number}] {faction.name}")
         print(f"[x] Exit the faction selection menu")
         faction_choice = input()
-        if faction_choice == '1':
+        if faction_choice <= 'faction_number':
+            selected_faction = faction_array[int(faction_choice) - 1]
             session_running = True
-            Player = faction1
+            Player = selected_faction
             print(f"You are {Player.name}")
             print(f"Provinces: {Player.size}, Population: {Player.population}, Income: {Player.income}, "
-                f"Treasury: {Player.treasury}, Manpower: {Player.manpower}")
-        elif faction_choice == '2':
-            session_running = True
-            Player = faction2
-            print(f"You are {Player.name}")
-            print(f"Provinces: {Player.size}, Population: {Player.population}, Income: {Player.income}, "
-                f"Treasury: {Player.treasury}, Manpower: {Player.manpower}")
-        elif faction_choice == '3':
-            session_running = True
-            Player = faction3
-            print(f"You are {Player.name}")
-            print(f"Provinces: {Player.size}, Population: {Player.population}, Income: {Player.income}, "
-                f"Treasury: {Player.treasury}, Manpower: {Player.manpower}")
-        elif faction_choice == '4':
-            session_running = True
-            Player = faction4
-            print(f"You are {Player.name}")
-            print(f"Provinces: {Player.size}, Population: {Player.population}, Income: {Player.income}, "
-                f"Treasury: {Player.treasury}, Manpower: {Player.manpower}")
+                    f"Treasury: {Player.treasury}, Manpower: {Player.manpower}")
         elif faction_choice == 'x':
             print("Exiting this menu")
             campaign_loop = False
