@@ -83,8 +83,9 @@ while game_running:
             print("[2] Print Province Information")
             print("[3] Upgrade Province")
             print("[4] Claim Unowned Province")
-            print("[5] End Turn")
-            print("[6] End Session")
+            print("[5] Build Army")
+            print("[6] End Turn")
+            print("[7] End Session")
             turn_choice = input()
             if turn_choice == '1':
                 print(f" You have {Player.treasury} gold, {Player.population} population, and {Player.size} provinces")
@@ -96,10 +97,14 @@ while game_running:
             elif turn_choice == '4':
                 Player.claim_province(Player, Player.provinces)
             elif turn_choice == '5':
+                print("Note: Unsupported Feature (2020/2/23 Version)")
+                #Player.add_army
+
+            elif turn_choice == '6':
                 turn += 1
                 season.change_season()
                 Player.earn_province_income(Player.provinces)
-            elif turn_choice == '6':
+            elif turn_choice == '7':
                 print("Exiting Session")
                 session_running = False
             else:
