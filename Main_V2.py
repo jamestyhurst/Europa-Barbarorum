@@ -6,13 +6,16 @@ from Faction_Test import *
 from Season import *
 from Provinces import *
 
-#Beginning of Game Loop Code
+#Pre-Game Loop Initialization Code
+#Initializing Boolean and Counter Values
 
 game_running = True
 campaign_loop = True
 session_running = True
 global turn
 turn = 1
+
+#Core Game Loop
 
 while game_running:
     #Faction Initialization
@@ -22,8 +25,10 @@ while game_running:
     faction4 = Faction('Germania', 0, 0, 0, 50, None, None)
     Player = Faction
 
+    #Setting baseline season value
     season = Season('Spring', 1)
 
+    #Game Bootup Menu
     print("Welcome to Europa Barbarorum")
     print("Make a choice:")
     print("[1] Start Game")
@@ -40,6 +45,7 @@ while game_running:
     else:
         print("Please try again")
 
+    #Campaign Selection Menu 
     while campaign_loop == True:
         print("Choose your faction")
         print(f"[1] {faction1.name}")
