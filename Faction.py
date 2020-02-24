@@ -231,6 +231,9 @@ class Faction:
                 else:
                     print("Please Try Again")
 
+    # def build_army(self, province)
+    #     pass
+
     def add_army(self, army):
         if army not in self.armies:
             self.armies.append(army)
