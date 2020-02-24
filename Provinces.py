@@ -7,19 +7,29 @@ population_level_2 = 1000
 #List of Provinces:
 #(Current Version, 2/23/2020: Each faction has an upper-income province and a lower-income province)
 #"Core Gallic Provinces"
-province1 = {'name': 'Lugdunum', 'population': population_level_2, 'income': income_level_2, 'owner': None}
-province2 = {'name': 'Bibracte', 'population': population_level_1, 'income': income_level_1, 'owner': None}
+province1 = {'name': 'Northern Gaul', 'population': population_level_2, 'income': income_level_2, 'owner': None}
+province2 = {'name': 'Southern Gaul', 'population': population_level_1, 'income': income_level_1, 'owner': None}
 #"Core Roman Provinces"
-province3 = {'name': 'Rome', 'population': population_level_2, 'income': income_level_2, 'owner': None}
-province4 = {'name': 'Capua', 'population': population_level_1, 'income': income_level_1, 'owner': None}
+province3 = {'name': 'Central Italy', 'population': population_level_2, 'income': income_level_2, 'owner': None}
+province4 = {'name': 'Southern Italy', 'population': population_level_1, 'income': income_level_1, 'owner': None}
 #"Core Greek Provinces"
 province5 = {'name': 'Attica', 'population': population_level_2, 'income': income_level_2, 'owner': None}
-province6 = {'name': 'Euboea', 'population': population_level_1, 'income': income_level_1, 'owner': None}
+province6 = {'name': 'Laconica', 'population': population_level_1, 'income': income_level_1, 'owner': None}
 #"Core Germanic Provinces"
-province7 = {'name': 'Macromania', 'population': population_level_2, 'income': income_level_2, 'owner': None}
-province8 = {'name': 'Lugia', 'population': population_level_1, 'income': income_level_1, 'owner': None}
+province7 = {'name': 'Northern Germania', 'population': population_level_2, 'income': income_level_2, 'owner': None}
+province8 = {'name': 'Western Germania', 'population': population_level_1, 'income': income_level_1, 'owner': None}
 
-ProvinceArray = [ province1, province2, province3, province4, province5, province6, province7, province8 ]
+province9 = {'name': 'Africa', 'population': population_level_2, 'income': income_level_2, 'owner': None}
+province10 = {'name': 'Libya', 'population': population_level_1, 'income': income_level_1, 'owner': None}
+
+province11 = {'name': 'Britannia', 'population': population_level_2, 'income': income_level_2, 'owner': None}
+province12 = {'name': 'Hibernia', 'population': population_level_1, 'income': income_level_1, 'owner': None}
+
+province13 = {'name': 'Macedonia', 'population': population_level_2, 'income': income_level_2, 'owner': None}
+province14 = {'name': 'Thrace', 'population': population_level_1, 'income': income_level_1, 'owner': None}
+
+ProvinceArray = [ province1, province2, province3, province4, province5, province6, province7, province8, province9, province10, 
+province11 , province12, province13, province14   ]
 #PopulationArray = [ province1, province2, province3, province4, province5, province6, province7, province8 ]
 
 
