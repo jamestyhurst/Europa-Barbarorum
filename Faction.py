@@ -1,8 +1,9 @@
-#Faction V2
+# Faction V2
 
 from Provinces import *
 from Season import *
 #from Main_V2 import *
+
 
 class Faction:
 
@@ -12,7 +13,7 @@ class Faction:
     manpower_modifier = 0.25
     faction_list = []
 
-    def __init__(self, name, size, income, population, treasury, provinces=None, armies = None):
+    def __init__(self, name, size, income, population, treasury, provinces=None, armies=None):
         self.name = name
         self.size = size
         self.income = income
@@ -36,8 +37,8 @@ class Faction:
         if Faction not in self.faction_list:
             self.faction_list.append(Faction)
 
-    #Defining Faction Selection Function
-    
+    # Defining Faction Selection Function
+
     # def Choose_Faction():
     #     print("Choose your faction")
     #     faction_number = 0
@@ -64,13 +65,11 @@ class Faction:
     #         session_running = False
     #     pass
 
-
     def update_population(self):
         faction_population = 0
         for province in self.provinces:
             faction_population += province['population']
         self.population = faction_population
-
 
     def add_province(self, province):
         if province not in self.provinces:
@@ -98,11 +97,8 @@ class Faction:
                     option_number += 1
                     option_array.append(province)
                     print(f"[{option_number}] {province['name']} , "
-                            f"income: {province['income']}, population: {province['population']}")
-                
-                   
-              
-                    
+                          f"income: {province['income']}, population: {province['population']}")
+
             print("Choose a province (or press x to return to previous menu)")
             province_selection = input()
             if province_selection <= 'option_number':
@@ -126,9 +122,10 @@ class Faction:
                         self.treasury -= 50
                         self.add_province(selected_province)
                         action_loop = False
-                        print(f"Province of {selected_province['name']} Seized by {self.name}")
+                        print(
+                            f"Province of {selected_province['name']} Seized by {self.name}")
                         print(" ")
-                    else: 
+                    else:
                         print("Not enough funds")
                 elif province_choice == 'x':
                     print("Exiting this menu")
@@ -137,45 +134,47 @@ class Faction:
                     print("Please Try Again")
             self.update_population()
 
-    #Intended for a Factional Ledger Operation
+    # Intended for a Factional Ledger Operation
     def print_provinces(self):
         for province in self.provinces:
             print(f"Provinces of {self.name}, total of {self.size}")
-            print(f"--> {province['name']}, {province['population']} people, income of {province['income']}" )
+            print(
+                f"--> {province['name']}, {province['population']} people, income of {province['income']}")
 
     def faction_sum(self):
         for province in self.provinces:
             self.population += province['population']
             return self.population
 
-    #Province-based income function, intended for when the turn ends
+    # Province-based income function, intended for when the turn ends
     def earn_province_income(self, provinces):
         for province in provinces:
             self.treasury = self.treasury + province['income']
 
-    #Provincial Economy Upgrade Function
+    # Provincial Economy Upgrade Function
     def improve_province(self, province):
         if province in self.provinces:
             province['income'] = province['income'] * self.improvement_amount
 
-    #Population growth function
+    # Population growth function
     def grow_province(self, province):
         if province in self.provinces:
-            province['population'] = province['population'] * self.growth_amount
+            province['population'] = province['population'] * \
+                self.growth_amount
 
-    #Function for selecting and improving provinces
+    # Function for selecting and improving provinces
     def manage_province(self, turn, season, Player):
-        #Boolean loop value initializations
+        # Boolean loop value initializations
         choice_loop = True
         action_loop = True
-        #if statement to check if Player actually has provinces to upgrade
+        # if statement to check if Player actually has provinces to upgrade
         if self.provinces == []:
             print(' ')
             print("[!] First claim a province before attempting to upgrade a province")
             print(' ')
             action_loop = False
             choice_loop = False
-        #Selection loop
+        # Selection loop
         while choice_loop == True:
             action_loop == True
             option_number = 0
@@ -199,10 +198,10 @@ class Faction:
                 print("Please Try Again")
                 action_loop = False
 
-
-            #Post-selection management loop
+            # Post-selection management loop
             while action_loop == True:
-                print(f"Select a Province-Management-Option, you have {Player.treasury} gold")
+                print(
+                    f"Select a Province-Management-Option, you have {Player.treasury} gold")
                 print("[1] Improve Income (50 Gold)")
                 print("[2] Grow Population (50 Gold)")
                 print("[3] Return to Province Selection Menu")
@@ -214,7 +213,7 @@ class Faction:
                         action_loop = False
                         print("Provincial Economy Updgraded")
                         print(" ")
-                    else: 
+                    else:
                         print("Not enough funds")
                 elif province_choice == '2':
                     if self.treasury >= 50:
@@ -223,7 +222,7 @@ class Faction:
                         action_loop = False
                         print("Provincial Population Expanded")
                         print(" ")
-                    else: 
+                    else:
                         print("Not enough funds")
                 elif province_choice == '3':
                     print("Returning to Province Selection Menu")
@@ -234,7 +233,7 @@ class Faction:
 
     # def build_army(self, province)
     #     pass
-    
+
     def add_army(self, army):
         if army not in self.armies:
             self.armies.append(army)
@@ -243,11 +242,10 @@ class Faction:
         if army in self.armies:
             self.armies.remove(army)
 
-
     def print_armies(self):
         for army in self.armies:
             print(f"Armies of {self.name}, total of {self.armies}")
-            print(f'--> Army #{army.number}, {army.size} men' )
+            print(f'--> Army #{army.number}, {army.size} men')
 
 # faction1 = Faction('Gaul', 0, 0, 0, 50, None, None)
 # faction2 = Faction('Rome', 0, 0, 0, 50, None, None)
@@ -256,8 +254,7 @@ class Faction:
 # faction_array = [faction1, faction2, faction3, faction4]
 # Player = Faction
 
-    #Below is legacy code from previous versions or which is not conveinent to have active in the current version
-
+    # Below is legacy code from previous versions or which is not conveinent to have active in the current version
 
     # def Faction_Facts(self):
     #     return '{}, {} province(s), {} income, {} population, {} gold'.format(self.name,
@@ -265,7 +262,7 @@ class Faction:
     #                                                                           self.income,
     #                                                                           self.population, self.treasury)
     #
-   
+
 # class non_player(Faction):
 #     number_of_npcs = 0
 #     npc_list = []
@@ -296,5 +293,3 @@ class Faction:
     # def npc_income(cls):
     #     for npc in non_player:
     #         cls.treasury = cls.treasury + cls.income
-
-
