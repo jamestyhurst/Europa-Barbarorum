@@ -11,8 +11,8 @@ from Provinces import *
 #Initializing Boolean and Counter Values
 
 game_running = True
-campaign_loop = False
-session_running = False
+campaign_loop = True
+session_running = True
 global turn
 turn = 1
 
@@ -33,22 +33,24 @@ while game_running:
     #Game Bootup Menu
     print("Welcome to Europa Barbarorum")
     print("Make a choice:")
-    print("[1] Start Game")
-    print("[2] Exit Program")
+    print("[1] Launch New Campaign")
+    print("[2] Custom Battle")
+    print("[3] Exit Program")
     game_choice = input()
     if game_choice == '1':
         print("Game Starting")
-        #session_running = True
+        session_running = True
         campaign_loop = True
     elif game_choice == '2':
+        print("Feature currently not enabled (2/23/2020 version")
+        #Insert activation code rooted in Fight.py
+    elif game_choice == '3':
         print("Closing Program")
-        #session_running = False
+        session_running = False
         game_running = False
-        #campaign_loop = False
+        campaign_loop = False
     else:
         print("Please try again")
-        campaign_loop = False
-        session_running = False
 
     #Campaign Selection Menu 
     while campaign_loop == True:
@@ -58,9 +60,9 @@ while game_running:
         for faction in faction_array:
             faction_number += 1
             print(f"[{faction_number}] {faction.name}")
-        print("[x] Exit the faction selection menu")
+        print(f"[x] Exit the faction selection menu")
         faction_choice = input()
-        if int(faction_choice) <= int(faction_number):
+        if faction_choice <= 'faction_number':
             selected_faction = faction_array[int(faction_choice) - 1]
             session_running = True
             Player = selected_faction
@@ -76,17 +78,17 @@ while game_running:
             session_running = False
 
         while session_running:
+            
+            turn_options = ["[1] Print Faction Information", "[2] Print Province Information", "[3] Upgrade Province", "[4] Claim Unowned Province",
+              "[5] Build Army", "[6] End Turn", "[7] End Session"  ]
 
             print(f"{season.name}, turn {turn}" )
             print(f"You have {Player.treasury} denarii and {Player.population} population")
             print("Make Your Turn Decision")
-            print("[1] Print Faction Information")
-            print("[2] Print Province Information")
-            print("[3] Upgrade Province")
-            print("[4] Claim Unowned Province")
-            print("[5] Build Army")
-            print("[6] End Turn")
-            print("[7] End Session")
+            counter = 0
+            for option in turn_options:
+                print(turn_options[counter])
+                counter += 1
             turn_choice = input()
             if turn_choice == '1':
                 print(f" You have {Player.treasury} gold, {Player.population} population, and {Player.size} provinces")
