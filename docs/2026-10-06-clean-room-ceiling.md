@@ -52,18 +52,18 @@ Total War battles stay a later seat. This slice does not simulate melee.
 
 ## Original slice in this commit
 
-`campaign_shape.py` is the structural core. Fictional polities only: Helvii, Senones, and a coastal league. No copied faction, no copied unit.
+`campaign_shape.py` is the structural core. It names no polities yet. No copied faction, no copied unit.
 
 - Government bands: homeland, governed, allied, occupied.
 - Recruitment: homeland and governed yield the faction pool. Allied yields the local pool plus a client ruler. Occupied yields a thin garrison only.
 - Reform gate: year, settlement count, and a named reformer. Numbers are ours.
 - Levy share: base times law times an opinion factor, floored by the law minimum. Coefficients are ours. The public CK2 formula is the analogy, not the table.
-- Season tick: treasury from income, population growth, one manpower recovery step.
+- Season tick: treasury from income and population growth. Manpower recovery is not modelled yet.
 
 Tests cover the gates. They do not import Faction.py. The 2020 menu loop stays untouched.
 
 ## Where this does not go
 
-Suvorov remains the engine. This repo is a consumer experiment. Do not port Clausewitz. Do not merge this PR. A stronger agent reviews before any merge, and James merges.
+Suvorov remains the engine. This repo is a consumer experiment. Do not port Clausewitz. Do not merge this PR. A stronger agent reviews before any merge, and James merges. (2026-10-30: superseded. James's weekly PR sweep now reviews and merges by his doctrine; Teutoburg designer note 2026-10-24.)
 
 Next permissible steps, still clean-room: a travel graph with envoy delay, a client-ruler person bound to an allied place, and a season report the agent can play. Battle resolution stays a separate seat.
