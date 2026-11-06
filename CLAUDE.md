@@ -1,6 +1,6 @@
-# CLAUDE.md — Europa-Barbarorum
+@AGENTS.md
 
-Historical Python game inspired by the Rome: Total War mod of the same name. This file is a standing-instructions stub added 2026-09-20 so cloud / iPhone Claude Code sessions have a project brief.
+The brief above governs. The notes below apply only to Claude Code.
 
 ## Cloud / iPhone sessions — token cap
 
